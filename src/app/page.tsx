@@ -43,39 +43,6 @@ export default function Home() {
     ],
   };
 
-  const projects = [
-    {
-      title: "E-commerce Platform",
-      description:
-        "A full-stack e-commerce solution with a product catalog, shopping cart, and Stripe integration for payments. Built for performance and scalability.",
-      image: "https://placehold.co/600x400.png",
-      tags: ["Next.js", "React", "Stripe", "Prisma"],
-      liveLink: "#",
-      sourceLink: "#",
-      aiHint: "online store",
-    },
-    {
-      title: "Social Media Dashboard",
-      description:
-        "A data visualization dashboard for social media analytics. It fetches data from various APIs and displays it using interactive charts and graphs.",
-      image: "https://placehold.co/600x400.png",
-      tags: ["React", "D3.js", "Node.js", "Express"],
-      liveLink: "#",
-      sourceLink: "#",
-      aiHint: "analytics dashboard",
-    },
-    {
-      title: "AI Content Summarizer",
-      description:
-        "A web app that uses a large language model to summarize long articles and documents. Integrated with Genkit for AI capabilities.",
-      image: "https://placehold.co/600x400.png",
-      tags: ["Next.js", "Genkit", "Tailwind CSS", "AI"],
-      liveLink: "#",
-      sourceLink: "#",
-      aiHint: "AI application",
-    },
-  ];
-
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -111,12 +78,6 @@ export default function Home() {
               className="transition-colors hover:text-primary"
             >
               Skills
-            </Link>
-            <Link
-              href="#projects"
-              className="transition-colors hover:text-primary"
-            >
-              Projects
             </Link>
             <Link
               href="#contact"
@@ -278,67 +239,6 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
-          </div>
-        </section>
-
-        <section id="projects" className="w-full py-12 md:py-24">
-          <div className="container">
-            <motion.h2
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="mb-12 text-center font-headline text-3xl font-bold md:text-4xl"
-            >
-              Projects
-            </motion.h2>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {projects.map((project, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 * index }}
-                >
-                  <Card className="group flex flex-col overflow-hidden shadow-lg transition-shadow hover:shadow-xl">
-                    <CardHeader className="overflow-hidden p-0">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        width={600}
-                        height={400}
-                        className="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint={project.aiHint}
-                      />
-                    </CardHeader>
-                    <CardContent className="flex flex-1 flex-col p-6">
-                      <CardTitle className="mb-2 font-headline text-xl transition-colors group-hover:text-primary">
-                        {project.title}
-                      </CardTitle>
-                      <p className="mb-4 flex-1 text-sm text-muted-foreground">
-                        {project.description}
-                      </p>
-                      <div className="mb-4 flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
-                          <Badge key={tag} variant="secondary">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                      <div className="mt-auto flex space-x-4">
-                        <Button size="sm" asChild>
-                          <Link href={project.liveLink}>Live Demo</Link>
-                        </Button>
-                        <Button size="sm" variant="outline" asChild>
-                          <Link href={project.sourceLink}>Source Code</Link>
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
 
