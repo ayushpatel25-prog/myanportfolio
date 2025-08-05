@@ -231,7 +231,7 @@ export default function Home() {
               </FramerMagnetic>
               <FramerMagnetic>
                 <Link
-                  href="mailto:youremail@gmail.com"
+                  href="mailto:ayushsbr09@gmail.com"
                   className="text-muted-foreground hover:text-primary"
                 >
                   <Mail />
