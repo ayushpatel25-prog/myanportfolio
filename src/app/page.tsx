@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import {
   Briefcase,
   Code,
@@ -44,6 +45,8 @@ export default function Home() {
       { name: "Python", icon: <Code2 className="h-8 w-8 text-primary" /> },
     ],
   };
+
+  const allSkills = [...skills.web, ...skills.languages];
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -103,29 +106,58 @@ export default function Home() {
             className="space-y-6 text-center md:text-left"
           >
             <div className="relative flex justify-center md:justify-start">
-              <div className="absolute -inset-2">
-                <AnimatedBeam />
+              <div className="relative h-20 w-20">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1, y: [0, -15, 0] }}
+                  transition={{
+                    scale: { type: "spring", stiffness: 260, damping: 20, delay: 0.5 },
+                    y: {
+                      delay: 1,
+                      duration: 2,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut",
+                    },
+                  }}
+                  className="relative flex h-full w-full items-center justify-center"
+                  style={{
+                    filter: "drop-shadow(0 2px 4px hsl(var(--primary)/0.4)) drop-shadow(0 5px 15px hsl(var(--primary)/0.2))",
+                  }}
+                >
+                  <Computer className="h-12 w-12 text-primary" />
+                </motion.div>
+                {allSkills.map((skill, index) => (
+                  <motion.div
+                    key={skill.name}
+                    className="absolute"
+                    style={{ top: "50%", left: "50%", x: "-50%", y: "-50%" }}
+                    animate={{
+                      rotate: 360,
+                      x: [
+                        "-50%",
+                        `calc(-50% + ${Math.cos((index / allSkills.length) * 2 * Math.PI) * 60}px)`,
+                        "-50%",
+                      ],
+                      y: [
+                        "-50%",
+                        `calc(-50% + ${Math.sin((index / allSkills.length) * 2 * Math.PI) * 60}px)`,
+                        "-50%",
+                      ],
+                    }}
+                    transition={{
+                      duration: 10,
+                      repeat: Infinity,
+                      ease: "linear",
+                      delay: index * 0.5,
+                    }}
+                  >
+                    {React.cloneElement(skill.icon, {
+                      className: "h-6 w-6 text-primary/80",
+                    })}
+                  </motion.div>
+                ))}
               </div>
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1, y: [0, -15, 0] }}
-                transition={{
-                  scale: { type: "spring", stiffness: 260, damping: 20, delay: 0.5 },
-                  y: {
-                    delay: 1,
-                    duration: 2,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    ease: "easeInOut",
-                  },
-                }}
-                className="relative flex justify-center md:justify-start"
-                style={{
-                  filter: "drop-shadow(0 2px 4px hsl(var(--primary)/0.4)) drop-shadow(0 5px 15px hsl(var(--primary)/0.2))",
-                }}
-              >
-                <Computer className="h-12 w-12 text-primary" />
-              </motion.div>
             </div>
             <h1 className="bg-gradient-to-r from-primary to-accent bg-clip-text font-headline text-4xl font-bold tracking-tighter text-transparent md:text-6xl">
               Hi, I am Ayush Patel
