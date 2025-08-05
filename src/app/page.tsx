@@ -45,34 +45,34 @@ export default function Home() {
 
   const projects = [
     {
-      title: "Portfolio Website",
+      title: "E-commerce Platform",
       description:
-        "A personal portfolio to showcase my skills and projects. Built with Next.js and Tailwind CSS for a modern and responsive design.",
+        "A full-stack e-commerce solution with a product catalog, shopping cart, and Stripe integration for payments. Built for performance and scalability.",
       image: "https://placehold.co/600x400.png",
-      tags: ["Next.js", "React", "Tailwind CSS"],
+      tags: ["Next.js", "React", "Stripe", "Prisma"],
       liveLink: "#",
       sourceLink: "#",
-      aiHint: "website interface",
+      aiHint: "online store",
     },
     {
-      title: "Task Management App",
+      title: "Social Media Dashboard",
       description:
-        "A web application to manage daily tasks, with features like adding, deleting, and marking tasks as complete. Frontend built with JavaScript.",
+        "A data visualization dashboard for social media analytics. It fetches data from various APIs and displays it using interactive charts and graphs.",
       image: "https://placehold.co/600x400.png",
-      tags: ["HTML", "CSS", "JavaScript"],
+      tags: ["React", "D3.js", "Node.js", "Express"],
       liveLink: "#",
       sourceLink: "#",
-      aiHint: "task manager",
+      aiHint: "analytics dashboard",
     },
     {
-      title: "Inventory System",
+      title: "AI Content Summarizer",
       description:
-        "A backend system for managing product inventory, developed using Java. It features basic CRUD operations for products.",
+        "A web app that uses a large language model to summarize long articles and documents. Integrated with Genkit for AI capabilities.",
       image: "https://placehold.co/600x400.png",
-      tags: ["Java"],
+      tags: ["Next.js", "Genkit", "Tailwind CSS", "AI"],
       liveLink: "#",
       sourceLink: "#",
-      aiHint: "inventory system",
+      aiHint: "AI application",
     },
   ];
 
