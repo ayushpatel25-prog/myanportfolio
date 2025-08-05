@@ -8,6 +8,7 @@ import {
   Computer,
   FileCode,
   Github,
+  Instagram,
   Linkedin,
   Mail,
   Paintbrush,
@@ -168,6 +169,22 @@ export default function Home() {
                   className="text-muted-foreground hover:text-primary"
                 >
                   <Twitter />
+                </Link>
+              </FramerMagnetic>
+              <FramerMagnetic>
+                <Link
+                  href="mailto:youremail@gmail.com"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  <Mail />
+                </Link>
+              </FramerMagnetic>
+              <FramerMagnetic>
+                <Link
+                  href="#"
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  <Instagram />
                 </Link>
               </FramerMagnetic>
             </div>
