@@ -139,7 +139,7 @@ export default function Home() {
               </FramerMagnetic>
               <FramerMagnetic>
                 <Button variant="secondary" asChild>
-                  <Link href="#">
+                  <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                     View Resume <Briefcase className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
