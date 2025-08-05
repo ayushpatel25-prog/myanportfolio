@@ -17,18 +17,16 @@ import {
 } from "lucide-react";
 import {
   motion,
-  useAnimationFrame,
   useMotionTemplate,
   useMotionValue,
-  useTransform,
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { AnimatedRobot } from "@/components/animated-robot";
 import { ContactForm } from "@/components/contact-form";
-import { AnimatedBeam, FramerMagnetic } from "@/components/ui/animated";
-import { Badge } from "@/components/ui/badge";
+import { FramerMagnetic } from "@/components/ui/animated";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 
 export default function Home() {
   const skills = {
@@ -312,6 +310,9 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
+            <div className="mt-16 flex justify-center">
+              <AnimatedRobot />
+            </div>
           </div>
         </section>
 
