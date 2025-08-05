@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -81,6 +82,12 @@ export default function Home() {
               className="transition-colors hover:text-primary"
             >
               Skills
+            </Link>
+            <Link
+              href="#projects"
+              className="transition-colors hover:text-primary"
+            >
+              Projects
             </Link>
             <Link
               href="#about"
@@ -239,7 +246,7 @@ export default function Home() {
             <div className="relative h-64 w-64 md:h-80 md:w-80">
               <div className="absolute inset-0.5 flex items-center justify-center overflow-hidden rounded-full border-4 border-primary/20 bg-primary/10 shadow-lg">
                 <Image
-                  src="/profile.jpg"
+                  src="https://placehold.co/320x320.png"
                   alt="Ayush Patel"
                   width={320}
                   height={320}
@@ -320,6 +327,33 @@ export default function Home() {
             <div className="mt-16 flex justify-center">
               <AnimatedRobot />
             </div>
+          </div>
+        </section>
+
+        <section id="projects" className="w-full py-12 md:py-24">
+          <div className="container">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <h2 className="font-headline text-3xl font-bold md:text-4xl">
+                My Projects
+              </h2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mx-auto mt-6 max-w-3xl text-center"
+            >
+              <p className="text-lg text-muted-foreground">
+                With 5 months of coding experience, I am currently working on 2 exciting projects. I'm always eager to apply my skills to new challenges and learn as I go.
+              </p>
+            </motion.div>
           </div>
         </section>
 
