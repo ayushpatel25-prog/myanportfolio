@@ -363,7 +363,7 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center">
                 <motion.div
                   initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
+                  whileInView={{ scale: 1 }}
                   transition={{
                     type: "spring",
                     stiffness: 260,
@@ -383,7 +383,7 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center">
                 <motion.div
                   initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
+                  whileInView={{ scale: 1 }}
                   transition={{
                     type: "spring",
                     stiffness: 260,
@@ -538,3 +538,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
