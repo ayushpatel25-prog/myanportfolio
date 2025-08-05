@@ -103,12 +103,16 @@ export default function Home() {
           >
             <motion.div
               initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
+              animate={{ scale: 1, y: [0, -15, 0] }}
               transition={{
-                type: "spring",
-                stiffness: 260,
-                damping: 20,
-                delay: 0.5,
+                scale: { type: "spring", stiffness: 260, damping: 20, delay: 0.5 },
+                y: {
+                  delay: 1,
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "easeInOut",
+                },
               }}
               className="flex justify-center md:justify-start"
               style={{
