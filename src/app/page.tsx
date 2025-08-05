@@ -102,26 +102,31 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-6 text-center md:text-left"
           >
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1, y: [0, -15, 0] }}
-              transition={{
-                scale: { type: "spring", stiffness: 260, damping: 20, delay: 0.5 },
-                y: {
-                  delay: 1,
-                  duration: 2,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "easeInOut",
-                },
-              }}
-              className="flex justify-center md:justify-start"
-              style={{
-                filter: "drop-shadow(0 2px 4px hsl(var(--primary)/0.4)) drop-shadow(0 5px 15px hsl(var(--primary)/0.2))",
-              }}
-            >
-              <Computer className="h-12 w-12 text-primary" />
-            </motion.div>
+            <div className="relative flex justify-center md:justify-start">
+              <div className="absolute -inset-2">
+                <AnimatedBeam />
+              </div>
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1, y: [0, -15, 0] }}
+                transition={{
+                  scale: { type: "spring", stiffness: 260, damping: 20, delay: 0.5 },
+                  y: {
+                    delay: 1,
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                  },
+                }}
+                className="relative flex justify-center md:justify-start"
+                style={{
+                  filter: "drop-shadow(0 2px 4px hsl(var(--primary)/0.4)) drop-shadow(0 5px 15px hsl(var(--primary)/0.2))",
+                }}
+              >
+                <Computer className="h-12 w-12 text-primary" />
+              </motion.div>
+            </div>
             <h1 className="bg-gradient-to-r from-primary to-accent bg-clip-text font-headline text-4xl font-bold tracking-tighter text-transparent md:text-6xl">
               Hi, I am Ayush Patel
             </h1>
