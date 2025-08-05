@@ -3,6 +3,7 @@
 
 import React from "react";
 import {
+  Award,
   Briefcase,
   Code,
   Code2,
@@ -95,6 +96,12 @@ export default function Home() {
               className="transition-colors hover:text-primary"
             >
               About
+            </Link>
+            <Link
+              href="#certifications"
+              className="transition-colors hover:text-primary"
+            >
+              Certifications
             </Link>
             <Link
               href="#contact"
@@ -398,9 +405,49 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="certifications" className="w-full py-12 md:py-24">
+          <div className="container text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="font-headline text-3xl font-bold md:text-4xl">
+                My Certifications
+              </h2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mx-auto mt-6 max-w-2xl"
+            >
+              <Card className="p-8">
+                <div className="flex flex-col items-center justify-center space-y-4">
+                  <Award className="h-16 w-16 text-primary" />
+                  <p className="text-lg text-muted-foreground">
+                    For a detailed list of my certifications, please visit my
+                    LinkedIn profile.
+                  </p>
+                  <FramerMagnetic>
+                    <Button asChild>
+                      <Link href="#" target="_blank" rel="noopener noreferrer">
+                        <Linkedin className="mr-2 h-5 w-5" />
+                        View on LinkedIn
+                      </Link>
+                    </Button>
+                  </FramerMagnetic>
+                </div>
+              </Card>
+            </motion.div>
+          </div>
+        </section>
+
         <section
           id="contact"
-          className="w-full py-12 md:py-24"
+          className="w-full bg-secondary/50 py-12 md:py-24"
         >
           <div className="container max-w-3xl">
             <motion.div
@@ -465,5 +512,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
