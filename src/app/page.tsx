@@ -201,7 +201,6 @@ export default function Home() {
             className="relative flex items-center justify-center"
           >
             <div className="relative h-64 w-64 md:h-80 md:w-80">
-              <AnimatedBeam />
               <div className="absolute inset-0.5 flex items-center justify-center overflow-hidden rounded-full border-4 border-primary/20 bg-primary/10 shadow-lg">
                 <Image
                   src="/profile.jpg"
