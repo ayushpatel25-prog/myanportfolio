@@ -92,16 +92,16 @@ export default function Home() {
               Projects
             </Link>
             <Link
-              href="#about"
-              className="transition-colors hover:text-primary"
-            >
-              About
-            </Link>
-            <Link
               href="#certifications"
               className="transition-colors hover:text-primary"
             >
               Certifications
+            </Link>
+            <Link
+              href="#about"
+              className="transition-colors hover:text-primary"
+            >
+              About
             </Link>
             <Link
               href="#contact"
@@ -378,33 +378,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="w-full bg-secondary/50 py-12 md:py-24">
-          <div className="container">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center"
-            >
-              <h2 className="font-headline text-3xl font-bold md:text-4xl">
-                About Me
-              </h2>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="mx-auto mt-6 max-w-3xl text-center"
-            >
-              <p className="text-lg text-muted-foreground">
-                I'm currently on a journey to become a skilled developer. I have a foundational understanding of web development technologies like HTML, CSS, and JavaScript, as well as programming languages like Java and Python. I'm a passionate learner, always excited to explore new technologies and improve my craft. This portfolio showcases my current projects and progress as I continue to grow in the field.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
         <section id="certifications" className="w-full py-12 md:py-24">
           <div className="container text-center">
             <motion.div
@@ -441,6 +414,33 @@ export default function Home() {
                   </FramerMagnetic>
                 </div>
               </Card>
+            </motion.div>
+          </div>
+        </section>
+
+        <section id="about" className="w-full bg-secondary/50 py-12 md:py-24">
+          <div className="container">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <h2 className="font-headline text-3xl font-bold md:text-4xl">
+                About Me
+              </h2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mx-auto mt-6 max-w-3xl text-center"
+            >
+              <p className="text-lg text-muted-foreground">
+                I'm currently on a journey to become a skilled developer. I have a foundational understanding of web development technologies like HTML, CSS, and JavaScript, as well as programming languages like Java and Python. I'm a passionate learner, always excited to explore new technologies and improve my craft. This portfolio showcases my current projects and progress as I continue to grow in the field.
+              </p>
             </motion.div>
           </div>
         </section>
@@ -512,3 +512,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
