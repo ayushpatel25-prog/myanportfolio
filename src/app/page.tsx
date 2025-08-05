@@ -111,6 +111,9 @@ export default function Home() {
                 delay: 0.5,
               }}
               className="flex justify-center md:justify-start"
+              style={{
+                filter: "drop-shadow(0 2px 4px hsl(var(--primary)/0.4)) drop-shadow(0 5px 15px hsl(var(--primary)/0.2))",
+              }}
             >
               <Computer className="h-12 w-12 text-primary" />
             </motion.div>
