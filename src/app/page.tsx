@@ -27,7 +27,6 @@ import { ContactForm } from "@/components/contact-form";
 import { FramerMagnetic } from "@/components/ui/animated";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   const skills = {
@@ -44,29 +43,6 @@ export default function Home() {
       { name: "Python", icon: <Code2 className="h-8 w-8 text-primary" /> },
     ],
   };
-
-  const projects = [
-    {
-      title: "UPI Payment App",
-      description:
-        "A concept for a UPI payment application, designed for seamless and secure transactions. Focused on user-friendly interface and robust payment processing.",
-      image: "https://placehold.co/600x400.png",
-      imageHint: "payment app",
-      tags: ["UI/UX", "Concept", "Payments"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: "Coffee Shop Website",
-      description:
-        "A modern and responsive website for a local coffee shop. Features a menu, online ordering, and a gallery of the shop's ambiance and products.",
-      image: "https://placehold.co/600x400.png",
-      imageHint: "coffee shop",
-      tags: ["Web Design", "Next.js", "E-commerce"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-  ];
 
   const allSkills = [...skills.web, ...skills.languages];
 
@@ -105,12 +81,6 @@ export default function Home() {
               className="transition-colors hover:text-primary"
             >
               Skills
-            </Link>
-            <Link
-              href="#projects"
-              className="transition-colors hover:text-primary"
-            >
-              Projects
             </Link>
             <Link
               href="#about"
@@ -269,7 +239,7 @@ export default function Home() {
             <div className="relative h-64 w-64 md:h-80 md:w-80">
               <div className="absolute inset-0.5 flex items-center justify-center overflow-hidden rounded-full border-4 border-primary/20 bg-primary/10 shadow-lg">
                 <Image
-                  src="https://placehold.co/320x320.png"
+                  src="/profile.jpg"
                   alt="Ayush Patel"
                   width={320}
                   height={320}
@@ -351,75 +321,6 @@ export default function Home() {
               <AnimatedRobot />
             </div>
           </div>
-        </section>
-
-        <section id="projects" className="container py-12 md:py-24">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-center"
-          >
-            <h2 className="font-headline text-3xl font-bold md:text-4xl">
-              My Projects
-            </h2>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2"
-          >
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 * index }}
-              >
-                <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    width={600}
-                    height={400}
-                    className="w-full object-cover"
-                    data-ai-hint={project.imageHint}
-                  />
-                  <CardHeader>
-                    <CardTitle>{project.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-muted-foreground">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <Badge key={tag} variant="secondary">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                    <div className="flex space-x-4">
-                      <Button variant="outline" asChild>
-                        <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                          Live Demo
-                        </Link>
-                      </Button>
-                      <Button asChild>
-                        <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="mr-2" /> GitHub
-                        </Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
         </section>
 
         <section id="about" className="w-full bg-secondary/50 py-12 md:py-24">
