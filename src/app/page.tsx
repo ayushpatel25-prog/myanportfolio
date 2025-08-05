@@ -83,6 +83,12 @@ export default function Home() {
               Skills
             </Link>
             <Link
+              href="#about"
+              className="transition-colors hover:text-primary"
+            >
+              About
+            </Link>
+            <Link
               href="#contact"
               className="transition-colors hover:text-primary"
             >
@@ -233,11 +239,12 @@ export default function Home() {
             <div className="relative h-64 w-64 md:h-80 md:w-80">
               <div className="absolute inset-0.5 flex items-center justify-center overflow-hidden rounded-full border-4 border-primary/20 bg-primary/10 shadow-lg">
                 <Image
-                  src="/profile.jpg"
+                  src="https://placehold.co/320x320.png"
                   alt="Ayush Patel"
                   width={320}
                   height={320}
                   className="object-cover"
+                  data-ai-hint="profile picture"
                 />
               </div>
             </div>
@@ -314,6 +321,31 @@ export default function Home() {
               <AnimatedRobot />
             </div>
           </div>
+        </section>
+
+        <section id="about" className="container py-12 md:py-24">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <h2 className="font-headline text-3xl font-bold md:text-4xl">
+              About Me
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mx-auto mt-6 max-w-3xl text-center"
+          >
+            <p className="text-lg text-muted-foreground">
+              I'm currently on a journey to become a skilled developer. I have a foundational understanding of web development technologies like HTML, CSS, and JavaScript, as well as programming languages like Java and Python. I'm a passionate learner, always excited to explore new technologies and improve my craft. This portfolio showcases my current projects and progress as I continue to grow in the field.
+            </p>
+          </motion.div>
         </section>
 
         <section
