@@ -5,11 +5,13 @@ import React from "react";
 import {
   Award,
   Briefcase,
+  CalendarDays,
   Code,
   Code2,
   Coffee,
   Computer,
   FileCode,
+  FolderKanban,
   Github,
   Instagram,
   Linkedin,
@@ -359,6 +361,18 @@ export default function Home() {
               className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-8 text-center md:grid-cols-2"
             >
               <div className="flex flex-col items-center justify-center">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20,
+                    delay: 0.5,
+                  }}
+                >
+                  <FolderKanban className="mb-4 h-16 w-16 text-primary" />
+                </motion.div>
                 <span className="font-headline text-6xl font-bold text-primary">
                   <AnimatedNumber value={2} />
                 </span>
@@ -367,6 +381,18 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-col items-center justify-center">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20,
+                    delay: 0.5,
+                  }}
+                >
+                  <CalendarDays className="mb-4 h-16 w-16 text-primary" />
+                </motion.div>
                 <span className="font-headline text-6xl font-bold text-primary">
                   <AnimatedNumber value={5} />
                 </span>
@@ -512,5 +538,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
