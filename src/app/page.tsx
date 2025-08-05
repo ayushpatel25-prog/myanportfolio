@@ -23,6 +23,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { AnimatedNumber } from "@/components/animated-number";
 import { AnimatedRobot } from "@/components/animated-robot";
 import { ContactForm } from "@/components/contact-form";
 import { FramerMagnetic } from "@/components/ui/animated";
@@ -340,7 +341,7 @@ export default function Home() {
               className="text-center"
             >
               <h2 className="font-headline text-3xl font-bold md:text-4xl">
-                My Projects
+                My Journey
               </h2>
             </motion.div>
             <motion.div
@@ -348,11 +349,24 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mx-auto mt-6 max-w-3xl text-center"
+              className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-8 text-center md:grid-cols-2"
             >
-              <p className="text-lg text-muted-foreground">
-                With 5 months of coding experience, I am currently working on 2 exciting projects. I'm always eager to apply my skills to new challenges and learn as I go.
-              </p>
+              <div className="flex flex-col items-center justify-center">
+                <span className="font-headline text-6xl font-bold text-primary">
+                  <AnimatedNumber value={2} />
+                </span>
+                <p className="mt-2 text-lg text-muted-foreground">
+                  Projects in Progress
+                </p>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <span className="font-headline text-6xl font-bold text-primary">
+                  <AnimatedNumber value={5} />
+                </span>
+                <p className="mt-2 text-lg text-muted-foreground">
+                  Months of Experience
+                </p>
+              </div>
             </motion.div>
           </div>
         </section>
