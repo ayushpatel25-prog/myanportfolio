@@ -5,6 +5,7 @@ import {
   Code,
   Code2,
   Coffee,
+  Computer,
   FileCode,
   Github,
   Linkedin,
@@ -100,6 +101,19 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="space-y-6 text-center md:text-left"
           >
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+                delay: 0.5,
+              }}
+              className="flex justify-center md:justify-start"
+            >
+              <Computer className="h-12 w-12 text-primary" />
+            </motion.div>
             <h1 className="bg-gradient-to-r from-primary to-accent bg-clip-text font-headline text-4xl font-bold tracking-tighter text-transparent md:text-6xl">
               Hi, I am Ayush Patel
             </h1>
@@ -161,12 +175,11 @@ export default function Home() {
               <AnimatedBeam />
               <div className="absolute inset-0.5 flex items-center justify-center overflow-hidden rounded-full border-4 border-primary/20 bg-primary/10 shadow-lg">
                 <Image
-                  src="https://placehold.co/320x320.png"
+                  src="/profile.jpg"
                   alt="Ayush Patel"
                   width={320}
                   height={320}
                   className="object-cover"
-                  data-ai-hint="profile picture"
                 />
               </div>
             </div>
