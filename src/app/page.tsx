@@ -166,6 +166,7 @@ export default function Home() {
                   width={320}
                   height={320}
                   className="object-cover"
+                  data-ai-hint="profile picture"
                 />
               </div>
             </div>
@@ -308,5 +309,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
