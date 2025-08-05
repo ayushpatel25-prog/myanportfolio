@@ -532,11 +532,12 @@ export default function Home() {
             <Link href="#" className="hover:text-primary">
               <Twitter />
             </Link>
+            <Link href="#" className="hover:text-primary">
+              <Instagram />
+            </Link>
           </div>
         </div>
       </footer>
     </div>
   );
 }
-
-    
