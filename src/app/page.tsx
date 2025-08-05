@@ -161,12 +161,11 @@ export default function Home() {
               <AnimatedBeam />
               <div className="absolute inset-0.5 flex items-center justify-center overflow-hidden rounded-full border-4 border-primary/20 bg-primary/10 shadow-lg">
                 <Image
-                  src="https://placehold.co/320x320.png"
+                  src="/profile.jpg"
                   alt="Ayush Patel"
                   width={320}
                   height={320}
                   className="object-cover"
-                  data-ai-hint="developer portrait"
                 />
               </div>
             </div>
@@ -309,3 +308,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
