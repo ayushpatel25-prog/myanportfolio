@@ -26,7 +26,8 @@ import { AnimatedRobot } from "@/components/animated-robot";
 import { ContactForm } from "@/components/contact-form";
 import { FramerMagnetic } from "@/components/ui/animated";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   const skills = {
@@ -43,6 +44,29 @@ export default function Home() {
       { name: "Python", icon: <Code2 className="h-8 w-8 text-primary" /> },
     ],
   };
+
+  const projects = [
+    {
+      title: "UPI Payment App",
+      description:
+        "A concept for a UPI payment application, designed for seamless and secure transactions. Focused on user-friendly interface and robust payment processing.",
+      image: "https://placehold.co/600x400.png",
+      imageHint: "payment app",
+      tags: ["UI/UX", "Concept", "Payments"],
+      liveUrl: "#",
+      githubUrl: "#",
+    },
+    {
+      title: "Coffee Shop Website",
+      description:
+        "A modern and responsive website for a local coffee shop. Features a menu, online ordering, and a gallery of the shop's ambiance and products.",
+      image: "https://placehold.co/600x400.png",
+      imageHint: "coffee shop",
+      tags: ["Web Design", "Next.js", "E-commerce"],
+      liveUrl: "#",
+      githubUrl: "#",
+    },
+  ];
 
   const allSkills = [...skills.web, ...skills.languages];
 
@@ -81,6 +105,12 @@ export default function Home() {
               className="transition-colors hover:text-primary"
             >
               Skills
+            </Link>
+            <Link
+              href="#projects"
+              className="transition-colors hover:text-primary"
+            >
+              Projects
             </Link>
             <Link
               href="#about"
@@ -323,7 +353,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="container py-12 md:py-24">
+        <section id="projects" className="container py-12 md:py-24">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -332,7 +362,7 @@ export default function Home() {
             className="text-center"
           >
             <h2 className="font-headline text-3xl font-bold md:text-4xl">
-              About Me
+              My Projects
             </h2>
           </motion.div>
           <motion.div
@@ -340,17 +370,88 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mx-auto mt-6 max-w-3xl text-center"
+            className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2"
           >
-            <p className="text-lg text-muted-foreground">
-              I'm currently on a journey to become a skilled developer. I have a foundational understanding of web development technologies like HTML, CSS, and JavaScript, as well as programming languages like Java and Python. I'm a passionate learner, always excited to explore new technologies and improve my craft. This portfolio showcases my current projects and progress as I continue to grow in the field.
-            </p>
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+              >
+                <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={600}
+                    height={400}
+                    className="w-full object-cover"
+                    data-ai-hint={project.imageHint}
+                  />
+                  <CardHeader>
+                    <CardTitle>{project.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-muted-foreground">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <Badge key={tag} variant="secondary">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <div className="flex space-x-4">
+                      <Button variant="outline" asChild>
+                        <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                          Live Demo
+                        </Link>
+                      </Button>
+                      <Button asChild>
+                        <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-2" /> GitHub
+                        </Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </motion.div>
+        </section>
+
+        <section id="about" className="w-full bg-secondary/50 py-12 md:py-24">
+          <div className="container">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <h2 className="font-headline text-3xl font-bold md:text-4xl">
+                About Me
+              </h2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mx-auto mt-6 max-w-3xl text-center"
+            >
+              <p className="text-lg text-muted-foreground">
+                I'm currently on a journey to become a skilled developer. I have a foundational understanding of web development technologies like HTML, CSS, and JavaScript, as well as programming languages like Java and Python. I'm a passionate learner, always excited to explore new technologies and improve my craft. This portfolio showcases my current projects and progress as I continue to grow in the field.
+              </p>
+            </motion.div>
+          </div>
         </section>
 
         <section
           id="contact"
-          className="w-full bg-secondary/50 py-12 md:py-24"
+          className="w-full py-12 md:py-24"
         >
           <div className="container max-w-3xl">
             <motion.div
