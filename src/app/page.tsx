@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -29,9 +28,17 @@ import Link from "next/link";
 import { AnimatedNumber } from "@/components/animated-number";
 import { AnimatedRobot } from "@/components/animated-robot";
 import { ContactForm } from "@/components/contact-form";
-import { FramerMagnetic } from "@/components/ui/animated";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
+import { Footer } from "@/components/footer";
+
+const socialLinks = {
+  github: "https://github.com/ayushpatel25-prog",
+  linkedin: "https://linkedin.com/in/ayush-patel-profile",
+  twitter: "https://twitter.com/ayush-patel-profile",
+  instagram: "https://instagram.com/ayush-patel-profile",
+  email: "mailto:ayush-patel-profile@example.com",
+};
 
 export default function Home() {
   const skills = {
@@ -189,62 +196,86 @@ export default function Home() {
               expanding my skillset.
             </p>
             <div className="flex justify-center space-x-4 md:justify-start">
-              <FramerMagnetic>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Button asChild>
                   <Link href="#contact">
                     Contact Me <Mail className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-              </FramerMagnetic>
-              <FramerMagnetic>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <Button variant="secondary" asChild>
                   <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                     View Resume <Briefcase className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-              </FramerMagnetic>
+              </motion.div>
             </div>
             <div className="flex justify-center space-x-4 pt-4 md:justify-start">
-              <FramerMagnetic>
+              <motion.div
+                whileHover={{ rotate: [0, -15, 15, -15, 0], transition: { duration: 0.3 } }}
+              >
                 <Link
-                  href="#"
+                  href={socialLinks.github}
                   className="text-muted-foreground hover:text-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Github />
                 </Link>
-              </FramerMagnetic>
-              <FramerMagnetic>
+              </motion.div>
+              <motion.div
+                whileHover={{ rotate: [0, -15, 15, -15, 0], transition: { duration: 0.3 } }}
+              >
                 <Link
-                  href="#"
+                  href={socialLinks.linkedin}
                   className="text-muted-foreground hover:text-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Linkedin />
                 </Link>
-              </FramerMagnetic>
-              <FramerMagnetic>
+              </motion.div>
+              <motion.div
+                whileHover={{ rotate: [0, -15, 15, -15, 0], transition: { duration: 0.3 } }}
+              >
                 <Link
-                  href="#"
+                  href={socialLinks.twitter}
                   className="text-muted-foreground hover:text-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Twitter />
                 </Link>
-              </FramerMagnetic>
-              <FramerMagnetic>
+              </motion.div>
+              <motion.div
+                whileHover={{ rotate: [0, -15, 15, -15, 0], transition: { duration: 0.3 } }}
+              >
                 <Link
-                  href="mailto:ayushsbr09@gmail.com"
+                  href={socialLinks.email}
                   className="text-muted-foreground hover:text-primary"
                 >
                   <Mail />
                 </Link>
-              </FramerMagnetic>
-              <FramerMagnetic>
+              </motion.div>
+              <motion.div
+                whileHover={{ rotate: [0, -15, 15, -15, 0], transition: { duration: 0.3 } }}
+              >
                 <Link
-                  href="#"
+                  href={socialLinks.instagram}
                   className="text-muted-foreground hover:text-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Instagram />
                 </Link>
-              </FramerMagnetic>
+              </motion.div>
             </div>
           </motion.div>
           <motion.div
@@ -256,7 +287,7 @@ export default function Home() {
             <div className="relative h-64 w-64 md:h-80 md:w-80">
               <div className="absolute inset-0.5 flex items-center justify-center overflow-hidden rounded-full border-4 border-primary/20 bg-primary/10 shadow-lg">
                 <Image
-                  src="me.jpeg"
+                  src="https://placehold.co/320x320.png"
                   alt="Ayush Patel"
                   width={320}
                   height={320}
@@ -300,12 +331,10 @@ export default function Home() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.1 * index }}
                     >
-                      <FramerMagnetic>
-                        <Card className="flex h-full flex-col items-center justify-center p-6 text-center shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                          {skill.icon}
-                          <p className="mt-4 font-semibold">{skill.name}</p>
-                        </Card>
-                      </FramerMagnetic>
+                      <Card className="flex h-full flex-col items-center justify-center p-6 text-center shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                        {skill.icon}
+                        <p className="mt-4 font-semibold">{skill.name}</p>
+                      </Card>
                     </motion.div>
                   ))}
                 </div>
@@ -323,12 +352,10 @@ export default function Home() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.1 * index }}
                     >
-                      <FramerMagnetic>
-                        <Card className="flex h-full flex-col items-center justify-center p-6 text-center shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                          {skill.icon}
-                          <p className="mt-4 font-semibold">{skill.name}</p>
-                        </Card>
-                      </FramerMagnetic>
+                      <Card className="flex h-full flex-col items-center justify-center p-6 text-center shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                        {skill.icon}
+                        <p className="mt-4 font-semibold">{skill.name}</p>
+                      </Card>
                     </motion.div>
                   ))}
                 </div>
@@ -404,7 +431,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="certifications" className="w-full py-12 md:py-24">
+        <section id="certifications" className="w-full bg-secondary/50 py-12 md:py-24">
           <div className="container text-center">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -425,26 +452,33 @@ export default function Home() {
             >
               <Card className="p-8">
                 <div className="flex flex-col items-center justify-center space-y-4">
-                  <Award className="h-16 w-16 text-primary" />
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1, rotate: 360 }}
+                    transition={{
+                      scale: { type: "spring", stiffness: 260, damping: 20, delay: 0.5 },
+                      rotate: { duration: 1.5, ease: "easeInOut", delay: 0.5 },
+                    }}
+                  >
+                    <Award className="h-16 w-16 text-primary" />
+                  </motion.div>
                   <p className="text-lg text-muted-foreground">
                     For a detailed list of my certifications, please visit my
                     LinkedIn profile.
                   </p>
-                  <FramerMagnetic>
-                    <Button asChild>
-                      <Link href="#" target="_blank" rel="noopener noreferrer">
-                        <Linkedin className="mr-2 h-5 w-5" />
-                        View on LinkedIn
-                      </Link>
-                    </Button>
-                  </FramerMagnetic>
+                  <Button asChild>
+                    <Link href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="mr-2 h-5 w-5" />
+                      View on LinkedIn
+                    </Link>
+                  </Button>
                 </div>
               </Card>
             </motion.div>
           </div>
         </section>
 
-        <section id="about" className="w-full bg-secondary/50 py-12 md:py-24">
+        <section id="about" className="w-full py-12 md:py-24">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -519,25 +553,10 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="w-full border-t border-border/40">
-        <div className="container flex flex-col items-center justify-between py-6 text-sm text-muted-foreground sm:flex-row">
-          <p>&copy; {new Date().getFullYear()} Ayush Patel. All rights reserved.</p>
-          <div className="mt-4 flex space-x-4 sm:mt-0">
-            <Link href="#" className="hover:text-primary">
-              <Github />
-            </Link>
-            <Link href="#" className="hover:text-primary">
-              <Linkedin />
-            </Link>
-            <Link href="#" className="hover:text-primary">
-              <Twitter />
-            </Link>
-            <Link href="#" className="hover:text-primary">
-              <Instagram />
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
+
+
+
