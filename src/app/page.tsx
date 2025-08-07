@@ -31,7 +31,7 @@ import { AnimatedRobot } from "@/components/animated-robot";
 import { ContactForm } from "@/components/contact-form";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Footer } from "@/components/footer";
+
 
 const socialLinks = {
   github: "https://github.com/ayushpatel25-prog",
@@ -554,7 +554,7 @@ export default function Home() {
         </section>
       </main>
 
-      <Footer />
+   
     </div>
   );
 }
