@@ -35,9 +35,9 @@ import { Card } from "@/components/ui/card";
 
 const socialLinks = {
   github: "https://github.com/ayushpatel25-prog",
-  linkedin: "https://linkedin.com/in/ayush-patel-profile",
+  linkedin: "https://www.linkedin.com/in/ayush-patel-b8b732342",
   twitter: "https://twitter.com/ayush-patel-profile",
-  instagram: "https://instagram.com/ayush-patel-profile",
+  instagram: "https://www.instagram.com/ayush.patel.25",
   email: "mailto:ayush-patel-profile@example.com",
 };
 
