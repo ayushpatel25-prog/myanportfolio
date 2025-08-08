@@ -38,7 +38,7 @@ const socialLinks = {
   linkedin: "https://www.linkedin.com/in/ayush-patel-b8b732342",
   twitter: "https://twitter.com/ayush-patel-profile",
   instagram: "https://www.instagram.com/ayush.patel.25",
-  email: "mailto:ayush-patel-profile@example.com",
+  email: "mailto:ayushsbr09@gmail.com",
 };
 
 export default function Home() {
